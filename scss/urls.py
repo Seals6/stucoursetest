@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include("user.urls")),
     path('course/', include("course.urls")),
+    path('captcha/', include('captcha.urls')),
+    #添加验证码url
 
     path('', home)
 ]

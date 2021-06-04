@@ -1,5 +1,6 @@
 # usr/bin/env python
 # -*- coding:utf-8- -*-
+from captcha.fields import CaptchaField
 from django import forms
 from .models import Student, Teacher
 
@@ -7,11 +8,14 @@ from .models import Student, Teacher
 class StuLoginForm(forms.Form):
     uid = forms.CharField(label='学号', max_length=10)
     password = forms.CharField(label='密码', max_length=30, widget=forms.PasswordInput)
-
+    captcha = CaptchaField(label='验证码')
+    #添加学生登录验证码模型
 
 class TeaLoginForm(forms.Form):
     uid = forms.CharField(label='教职工号', max_length=10)
     password = forms.CharField(label='密码', max_length=30, widget=forms.PasswordInput)
+    captcha = CaptchaField(label='验证码')
+    #添加老师登录验证码模型
 
 
 class StuRegisterForm(forms.ModelForm):
