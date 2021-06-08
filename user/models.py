@@ -53,6 +53,3 @@ class Teacher(models.Model):
             # 复合主键：保证 department_no 和number组合的 teacher_id 唯一
             models.UniqueConstraint(fields=['department_no', 'number'], name='teacher_id'),
         ]
-
-
-
