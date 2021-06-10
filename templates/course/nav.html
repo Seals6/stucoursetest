@@ -13,7 +13,7 @@
 <div class="nav">
     <div class="nav-title">
         <a href="{% url 'course' kind=info.kind %}">
-        <p class="main-title">学生选课管理系统</p>
+        <p class="main-title">四川传媒学院信息服务平台</p>
         <p class="sub-title">
             {% if info.kind == "teacher" %}
                 教师端
@@ -26,6 +26,9 @@
     <div class="log-out">
         <a href="{% url "logout" %}">退出</a>
     </div>
+
+
+
     <div class="name-logo">
         <div class="user-name">
             <a href="{% url 'update' info.kind %}">
@@ -33,12 +36,79 @@
             </a>
         </div>
     </div>
+
+    <div id="menu">
+{#菜单下拉框 链接还没有#}
+    <ul>
+        <li><a href="" class="drop">申请</a>
+        <div class="dropdown_1column">
+            <div class="col_1">
+                    <ul class="simple">
+                            <li><a href="">学生申请</a></li>
+                            <li><a href="">教学申请</a></li>
+                            <li><a href="">请假申请</a></li>
+                            <li><a href="">教室申请</a></li>
+                    </ul>
+            </div>
+
+        </div>
+        </li>
+         <li><a href="" class="drop">信息维护</a>
+        <div class="dropdown_1column">
+            <div class="col_1">
+                    <ul class="simple">
+                            <li><a href="">网站建设</a></li>
+                            <li><a href="">导航条代码</a></li>
+                            <li><a href="">关于我们</a></li>
+                    </ul>
+            </div>
+
+        </div>
+        </li>
+         <li><a href="" class="drop">成绩</a>
+        <div class="dropdown_1column">
+            <div class="col_1">
+                    <ul class="simple">
+                            <li><a href="">学科成绩</a></li>
+                            <li><a href="">学生成绩明细</a></li>
+                            <li><a href="">全年成绩</a></li>
+                    </ul>
+            </div>
+
+        </div>
+        </li>
+         <li><a href="" class="drop">教学评价</a>
+        <div class="dropdown_1column">
+            <div class="col_1">
+                    <ul class="simple">
+                            <li><a href="">学生评价</a></li>
+                            <li><a href="">教师评价</a></li>
+                    </ul>
+            </div>
+
+        </div>
+        </li>
+         <li><a href="" class="drop">毕业设计</a>
+        <div class="dropdown_1column">
+            <div class="col_1">
+                    <ul class="simple">
+                            <li><a href="">论文设计</a></li>
+                            <li><a href="">论文查重</a></li>
+                    </ul>
+            </div>
+
+        </div>
+        </li>
+
+    </ul>
+    </div>
+
+
 </div>
 
 <div class="main-content">
     {% block content %}{% endblock %}
 </div>
-
 
 </body>
 </html>
