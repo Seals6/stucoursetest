@@ -1,6 +1,9 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render, reverse, redirect
 from django.db.models import Q
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from xhtml2pdf.default import DEFAULT_FONT
 
 from constants import INVALID_KIND, INVALID_REQUEST_METHOD, ILLEGAL_KIND
 from course.forms import CourseForm, ScheduleForm
@@ -9,6 +12,8 @@ from user.util import get_user
 
 from django.utils import timezone
 
+from django.conf import settings
+from easy_pdf.views import PDFTemplateView
 
 def to_home(request):
     kind = request.session.get('kind', '')
@@ -286,3 +291,20 @@ def operate_course(request, operate_kind, course_id):
         course.save()
 
     return redirect(reverse("view_course", kwargs={"view_kind": operate_kind}))
+
+'''
+添加PDF视图
+'''
+class HelloPDFView(PDFTemplateView):
+    template_name = 'course/pdf.html'  # html模板
+    download_filename = 'hello.pdf'  # 下载pdf时的文件名
+
+    def get_context_data(self, **kwargs):
+        data = self.request.GET  # 可以获取请求参数
+
+        return super(HelloPDFView, self).get_context_data(
+            pagesize='A4',
+            title='Hi there!',  # 转成pdf后文件上方的标题
+            other='other',  # 也可以按需求增加自己需要的值，然后通过django的模板语言渲染到页面上
+            **kwargs
+        )

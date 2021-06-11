@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'course',
     'captcha',
     #注册验证码应用
+    'easy_pdf',
+    #注册pdf应用
 ]
 
 MIDDLEWARE = [

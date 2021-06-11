@@ -25,6 +25,5 @@ urlpatterns = [
     path('course/', include("course.urls")),
     path('captcha/', include('captcha.urls')),
     #添加验证码url
-
     path('', home)
 ]
