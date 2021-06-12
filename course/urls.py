@@ -38,6 +38,6 @@ urlpatterns = [
     path('student/view_detail/<int:pk>', StudentCourseDetailView.as_view(), name="sview_detail"),
     #添加PDF视图路由
     path('teacher/pdf/', HelloPDFView.as_view(), name='pdf'),
-    #cvs视图路由
-    path('teacher/cvs/', views.cvs),
+    #csv视图路由
+    path('teacher/csv/', views.cvs),
 ]
