@@ -1,10 +1,39 @@
 {% extends "easy_pdf/base.html" %}
 
 {% block content %}
-    <div id="content">
-        <h1>Sccm Score</h1>
-        <tr>1</tr>
-        <td>2</td>
-        <td>3</td>
-    </div>
+    <style type="text/css">
+h1 {
+    color:red;
+    font-size: 20px;
+}
+table {
+    height: 40px;
+    background-color:lightblue;
+}
+table td{
+    text-align: center;
+    vertical-align: middle;
+}
+</style>
+        <h1 align="center">Sccm Students Score</h1>
+        <table border="0.5">
+        <tr>
+            <th>id:</th>
+            <th>name:</th>
+            <th>subject:</th>
+            <th>score:</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>test1</td>
+            <td>Django</td>
+            <td>89</td>
+        </tr>
+        <tr>
+            <td>Null</td>
+            <td>Null</td>
+            <td>Null</td>
+            <td>Null</td>
+        </tr>
+        </table>
 {% endblock %}
