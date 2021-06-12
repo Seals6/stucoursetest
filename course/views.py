@@ -1,9 +1,14 @@
+#coding=UTF-8
 from django.http.response import HttpResponse
 from django.shortcuts import render, reverse, redirect
 from django.db.models import Q
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from xhtml2pdf.default import DEFAULT_FONT
+
+import csv
+import codecs
+from django.http import HttpResponse
 
 from constants import INVALID_KIND, INVALID_REQUEST_METHOD, ILLEGAL_KIND
 from course.forms import CourseForm, ScheduleForm
@@ -308,3 +313,17 @@ class HelloPDFView(PDFTemplateView):
             other='other',  # 也可以按需求增加自己需要的值，然后通过django的模板语言渲染到页面上
             **kwargs
         )
+
+#csv视图
+def cvs(request):
+    response = HttpResponse(content_type='text/csv')
+    response.write(codecs.BOM_UTF8) #格式
+    # attachment 代表这个csv文件作为一个附件的形式下载
+    # filename='abc.csv' 指定下载的文件名字
+    response['Content-Disposition'] = 'attachment;filename="table.csv"'
+    writer = csv.writer(response)
+    writer.writerow(['星期一','星期二','星期三', '星期四','星期五','星期六','星期日'])
+    writer.writerow(['云计算','Django',' ',''])    # 在这里并不会指定文件名字。
+    writer.writerow(['', '大数据', ' ', 'Linux'])
+    writer.writerow(['', '', '写作之道', ''])
+    return response
