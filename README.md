@@ -22,15 +22,15 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 - search course
 - form css
 
-
-
+```shell
 python manage.py makemigrations
 python manage.py migrate
+```
 
 ## TIPS
 
 #### account
-
+```text
 Teahcer:
 任猎城
 u: 1280000001
@@ -44,7 +44,6 @@ p: 12341234
 牛有力
 u: 2660000001
 p: password
-
 
 
 Student:
@@ -62,8 +61,7 @@ three12345
 
 2020000002
 xiaored
-
-
+```
 
 ## Problems
 
