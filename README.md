@@ -2,16 +2,18 @@
 
 [TOC]
 
-## 安装环境
-
-#### Python version: 3.8.2
-
-#### Django version: 2.2.11
-
+## 安装依赖环境
+#### 1.第一种方法
 ```shell
 pip install django-easy-pdf
 pip install reportlab
 pip install django-simple-captcha
+```
+
+#### 2.更加简洁方法
+```shell
+#这里用的清华源，可以自行更改
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ## TODO
