@@ -5,6 +5,7 @@
 ## 安装依赖环境
 #### 1.第一种方法
 ```shell
+pip install django
 pip install django-easy-pdf
 pip install reportlab
 pip install django-simple-captcha
