@@ -3,19 +3,17 @@
 [TOC]
 
 ## 安装依赖环境
-#### 1.第一种方法
-```shell
-pip install django
-pip install django-easy-pdf
-pip install reportlab
-pip install django-simple-captcha
-```
-
-#### 2.更加简洁方法
+### 1.导入第三方库
 ```shell
 #这里用的清华源，可以自行更改
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+### 2.启动时的疑难杂症
+>ps:若启动出现`No module named 'django.utils.six'`情况
+
+1. 前提确认安装第三方库`six`，可以先`pip install six`看看
+2. 找到第三方库安装位置`site-packages`中找到six.py
+3. 将`six.py`复制到`django/utils`下即可
 
 ## TODO
 
